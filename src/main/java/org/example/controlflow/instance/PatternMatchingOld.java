@@ -1,5 +1,7 @@
 package org.example.controlflow.instance;
 
+import static java.io.IO.println;
+
 public class PatternMatchingOld {
 
     public static void main(String[] args) {
@@ -8,7 +10,8 @@ public class PatternMatchingOld {
         // Traditional instanceof check and cast
         if (obj instanceof String) {
             String str = (String) obj; // Manual casting required
-            System.out.println("String length: " + str.length());
+            //Noticed anything new?
+            println("String length: " + str.length());
         } else {
             System.out.println("Not a string");
         }

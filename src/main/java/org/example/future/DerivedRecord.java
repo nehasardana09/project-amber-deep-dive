@@ -1,7 +1,8 @@
 package org.example.future;
 
 // Define the Person record
-record Person(String name, int age, String email) {}
+record Person(String name, int age, String email) {
+}
 
 public class DerivedRecord {
 

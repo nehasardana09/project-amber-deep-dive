@@ -12,6 +12,7 @@ public void main() {
 
     departments.stream()
             .flatMap(dept -> dept.employees().stream())
-            .filter(emp -> emp instanceof Employee(String name, String position) && position.equals("Developer"))
+            //use var in one parameter and not another?
+            .filter(emp -> emp instanceof Employee(var _, var position) && position.equals("Developer"))
             .forEach(emp -> System.out.println(emp.name()));
 }

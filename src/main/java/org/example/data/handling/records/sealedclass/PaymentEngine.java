@@ -1,9 +1,10 @@
 package org.example.data.handling.records.sealedclass;
 
-// Define PaymentMethod as an interface instead of a sealed class
+// Define PaymentMethod as an interface of a sealed class
+//No Cash Payment allowed
 sealed interface PaymentMethod permits CreditCard, PayPal, BankTransfer {
 
-    // Abstract method to process payment
+    // method to process payment
     void processPayment(double amount);
 }
 
@@ -11,7 +12,7 @@ sealed interface PaymentMethod permits CreditCard, PayPal, BankTransfer {
 record CreditCard(String cardNumber) implements PaymentMethod {
     @Override
     public void processPayment(double amount) {
-        System.out.println(STR."Processing credit card payment of $\{amount} for card: \{cardNumber}");
+        System.out.printf("Processing credit card payment of %s for card: %s%n", amount, cardNumber);
     }
 }
 
@@ -19,7 +20,7 @@ record CreditCard(String cardNumber) implements PaymentMethod {
 record PayPal(String email) implements PaymentMethod {
     @Override
     public void processPayment(double amount) {
-        System.out.println(STR."Processing PayPal payment of $\{amount} for account: \{email}");
+        System.out.printf("Processing PayPal payment of %s for account: %s%n", amount, email);
     }
 }
 
@@ -27,7 +28,13 @@ record PayPal(String email) implements PaymentMethod {
 record BankTransfer(String bankAccount) implements PaymentMethod {
     @Override
     public void processPayment(double amount) {
-        System.out.println(STR."Processing bank transfer payment of $\{amount} to account: \{bankAccount}");
+        System.out.printf("Processing bank transfer payment of %s to account: %s%n", amount, bankAccount);
+    }
+}
+//CashPayment is not allowed as a subclass under a valid Payment method
+record CashPayment(String amount){
+    public void processPayment(double amount) {
+        System.out.printf("Processing cash payment of %s for account: %s%n", amount, amount);
     }
 }
 

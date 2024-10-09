@@ -1,9 +1,9 @@
+package org.example.newfeatures.flexibleconstructors;
 
-
-public class SuperClass {
+class SuperClass {
     SuperClass(String message){
 
-        System.out.println(STR."Hello from SuperClass! : \{message}");
+        System.out.println("Hello from org.example.newfeatures.flexibleconstructors.SuperClass! : " + message);
     }
 }
 
@@ -20,7 +20,8 @@ class SubClass extends SuperClass {
         return message;
     }
 }
-
-void main(){
-    new SubClass();
+public class SuperClassMain {
+    void main() {
+        new SubClass();
+    }
 }

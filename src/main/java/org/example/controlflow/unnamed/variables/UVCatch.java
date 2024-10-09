@@ -1,9 +1,9 @@
  void validateNumber(String s) {
     try {
         int i = Integer.parseInt(s);
-        System.out.println(STR."\{i} is valid");
+        System.out.println(i + " is valid");
     } catch (NumberFormatException _) {
-        System.out.println(STR."\{s} isn't valid");
+        System.out.println(s+ " isn't valid");
     }
 }
 

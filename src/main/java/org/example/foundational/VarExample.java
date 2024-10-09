@@ -4,7 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
-
+//Var was introduced in Java 10
+//Var with Lambda parameters was introduced in Java 11
 public class VarExample {
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -21,7 +22,7 @@ public class VarExample {
             System.out.println(state);
         }
 
-        //Usage 3:
+        //Usage 3: //try with resources
         try(var stream = new FileInputStream("states.txt")) {
             String state = String.valueOf(stream.read());
             System.out.println(state);

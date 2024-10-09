@@ -8,7 +8,7 @@ record UniqueRectangle(String id,
                        Point upperLeft, Point lowerRight) {}
 
  Map getIDs(List<UniqueRectangle> r) {
-    return r.stream().collect(Collectors.toMap(UniqueRectangle::id, value -> "NODATA"));
+    return r.stream().collect(Collectors.toMap(UniqueRectangle::id, _ -> "NODATA"));
 }
 
 public void main() {

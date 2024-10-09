@@ -11,5 +11,5 @@ public String formatterPatternSwitch(Object o){
 }
 
 void main(){
-    formatterPatternSwitch("Neha");
+    System.out.println(formatterPatternSwitch("Neha Sardana"));
 }

@@ -26,12 +26,13 @@ public class TextBlockExample {
         System.out.println(jsonNew);
 
         // A SQL query using text blocks
-        String sqlQuery = """
+        String sqlQuery =
+    """
                 SELECT id, name, email
                 FROM users
                 WHERE age > 25
                 ORDER BY name ASC;
-                """;
+             """;
 
         System.out.println("\nSQL Query using text blocks:");
         System.out.println(sqlQuery);
